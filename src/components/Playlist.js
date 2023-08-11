@@ -1,5 +1,4 @@
 import React from "react";
-import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 import Track from "./Track";
 
 export default function Playlist() {
@@ -7,7 +6,6 @@ export default function Playlist() {
 		<>
 			<div>Playlist</div>
 			<Track />
-			<SaveToSpotifyButton />
 		</>
 	);
 }

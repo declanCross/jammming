@@ -2,7 +2,7 @@ import "./App.css";
 import ChangeHeader from "./components/ChangeHeader";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
-import Playlist from "./components/Playlist";
+import PlaylistResults from "./components/PlaylistResults";
 
 function App() {
 	return (
@@ -19,7 +19,7 @@ function App() {
 					<SearchResults />
 				</div>
 				<div>
-					<Playlist />
+					<PlaylistResults />
 				</div>
 			</main>
 			<footer className="App-footer"></footer>
