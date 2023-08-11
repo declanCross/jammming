@@ -1,4 +1,5 @@
 import "./App.css";
+import ChangeHeader from "./components/ChangeHeader";
 import SearchBar from "./components/SearchBar";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 				<h1>Jammmin</h1>
 			</header>
 			<main className="App-main">
-				<ChangingHeader />
+				<ChangeHeader />
 				<SearchBar />
 			</main>
 			<footer className="App-footer"></footer>
