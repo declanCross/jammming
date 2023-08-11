@@ -12,15 +12,9 @@ function App() {
 			</header>
 			<main className="App-main">
 				<ChangeHeader />
-				<div className="App-search">
-					<SearchBar />
-				</div>
-				<div>
-					<SearchResults />
-				</div>
-				<div>
-					<PlaylistResults />
-				</div>
+				<SearchBar />
+				<SearchResults />
+				<PlaylistResults />
 			</main>
 			<footer className="App-footer"></footer>
 		</div>
