@@ -1,6 +1,5 @@
 import "./App.css";
 import SearchBar from "./components/SearchBar";
-import ChangingHeader from "./components/ChangingHeader";
 
 function App() {
 	return (
