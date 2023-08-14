@@ -4,7 +4,7 @@ import "../components_styles/SearchButton.css";
 export default function SearchButton() {
 	return (
 		<>
-			<input type="button" value='Search'></input>
+			<input className="SearchButton" type="button" value='Search'></input>
 		</>
 	);
 }

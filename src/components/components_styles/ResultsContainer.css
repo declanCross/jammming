@@ -1,0 +1,29 @@
+.background-container {
+	background-image: url(./images/dots.png);
+	padding: 3vw 5vw 3vw 5vw;
+	min-width: 350px;
+	max-width: 600px;
+	min-height: 400px;
+}
+
+.results-container {
+	background-color: #ff0;
+	height: 100%;
+}
+
+.results-header {
+	display: flex;
+	border-bottom: 1px solid black;
+	padding: 0px 5px 0px 5px;
+	height: 40px;
+	/* margin: auto; */
+	justify-content: space-between;
+}
+
+.results-header > h2 {
+	display: flex;
+	margin: auto;
+	margin-left: 0px;
+	/* border-bottom: 1px solid black; */
+	/* padding-left: 5px; */
+}
