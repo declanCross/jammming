@@ -10,8 +10,10 @@ function App() {
 			<header className="App-header">
 				<h1>Jammmin</h1>
 			</header>
-			<main className="App-main">
+			<div className="App-header-gradient">
 				<ChangeHeader />
+			</div>
+			<main className="App-main">
 				<SearchBar />
 				<SearchResults />
 				<PlaylistResults />

@@ -4,21 +4,35 @@
 
 .App-header {
 	background-color: #00a700;
+	/* background-image: linear-gradient(360deg, #ffff00, #00a700); */
 	min-height: 10vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(12px + 2vmin);
-	color: white;
+	color: #fcfcfc;
+}
+
+.App-header-gradient {
+	background-image: linear-gradient(360deg, #ffff00, #00a700);
+	min-height: 10vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(12px + 2vmin);
+	color: #fcfcfc;
 }
 
 .App-main {
 	background-color: #ffff00;
-	min-height: 80vh;
+	min-height: 60vh;
+	color: #141414;
 }
 
 .App-footer {
 	background-color: #c40000;
-	min-height: 10vh;
+	background-image: linear-gradient(360deg, #c40000, #ffff00);
+	min-height: 20vh;
 }
