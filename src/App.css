@@ -20,7 +20,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 	font-size: calc(12px + 2vmin);
 	color: #fcfcfc;
 }
