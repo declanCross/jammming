@@ -1,0 +1,14 @@
+.container {
+	border: 1px solid blue;
+	background-image: url(./images/dots.png);
+	padding: 3vw 5vw 3vw 5vw;
+	min-width: 350px;
+	max-width: 600px;
+	min-height: 400px;
+}
+
+.search-results-container {
+	border: 1px solid purple;
+	background-color: #ff0;
+	height: 100%;
+}

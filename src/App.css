@@ -31,6 +31,12 @@
 	color: #141414;
 }
 
+.App-main-results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
 .App-footer {
 	background-color: #c40000;
 	background-image: linear-gradient(360deg, #c40000, #ffff00);

@@ -4,8 +4,10 @@ import Track from "./Track";
 export default function Tracklist() {
 	return (
 		<>
-			<div>Tracklist</div>
-			<Track />
+			<div>
+				Tracklist
+				<Track />
+			</div>
 		</>
 	);
 }

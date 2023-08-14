@@ -15,8 +15,10 @@ function App() {
 			</div>
 			<main className="App-main">
 				<SearchBar />
-				<SearchResults />
-				<PlaylistResults />
+				<div className="App-main-results">
+					<SearchResults />
+					<PlaylistResults />
+				</div>
 			</main>
 			<footer className="App-footer"></footer>
 		</div>
