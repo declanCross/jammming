@@ -5,9 +5,9 @@ import Tracklist from "./Tracklist";
 export default function SearchResults() {
 	return (
 		<>
-			<div className='container'>
+			<div className='search-background-container'>
 				<div className='search-results-container'>
-					SearchResults
+					<h2>Results</h2>
 					<Tracklist />
 				</div>
 			</div>

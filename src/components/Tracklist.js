@@ -5,7 +5,7 @@ export default function Tracklist() {
 	return (
 		<>
 			<div>
-				Tracklist
+				<Track />
 				<Track />
 			</div>
 		</>

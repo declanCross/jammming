@@ -1,0 +1,28 @@
+.track-container {
+	display: flex;
+	height: 100px;
+}
+
+.album-container {
+	width: 30%;
+	margin: 1%;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+.info-container {
+	width: 70%;
+	margin: 1%;
+	padding-top: 10%;
+}
+
+.info-container > h3,
+h5 {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	padding-bottom: 5px;
+}
