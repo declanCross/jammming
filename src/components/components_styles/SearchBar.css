@@ -1,6 +1,11 @@
-input {
+.SearchBar {
+	display: flex;
+	justify-content: center;
+}
+
+input.Search {
 	border-radius: 50px;
 	min-height: 24px;
-	min-width: 50vw;
+	min-width: 250px;
 	text-align: center;
 }

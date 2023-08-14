@@ -5,11 +5,14 @@ import SearchButton from "./buttons/SearchButton";
 export default function SearchBar() {
 	return (
 		<>
-			<input
-				type="text"
-				placeholder="Search for songs/artists/albums here"
-			></input>
-			<SearchButton />
+			<div className="SearchBar">
+				<input
+					className='Search'
+					type="text"
+					placeholder="Search for songs/artists/albums here"
+				></input>
+				<SearchButton />
+			</div>
 		</>
 	);
 }

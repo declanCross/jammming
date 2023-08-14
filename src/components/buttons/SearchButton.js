@@ -1,9 +1,10 @@
 import React from "react";
+import "../components_styles/SearchButton.css";
 
 export default function SearchButton() {
 	return (
 		<>
-			<div>SearchButton</div>
+			<input type="button" value='Search'></input>
 		</>
 	);
 }
