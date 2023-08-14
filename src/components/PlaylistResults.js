@@ -9,7 +9,7 @@ export default function PlaylistResults() {
 			<div className="background-container">
 				<div className="results-container">
 					<div className="results-header">
-						<h2>Playlist</h2>
+						<input className="playlist-name" type="text" placeholder="Name your playlist"></input>
 						<SaveToSpotifyButton />
 					</div>
 					<Playlist />
