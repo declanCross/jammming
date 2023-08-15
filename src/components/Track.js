@@ -1,17 +1,18 @@
 import React from "react";
 import "./components_styles/Track.css";
-import albumImage from "./components_styles/images/image-wireframe-mobile.png";
 
-export default function Track() {
+export default function Track(props) {
 	return (
 		<>
 			<div className="track-container">
 				<div className="album-container">
-					<img src={albumImage} alt=""></img>
+					<img src={props.albumArt} alt=""></img>
 				</div>
 				<div className="info-container">
-					<h3>Song name</h3>
-					<h5>Artist | Album</h5>
+					<h3>{props.name}</h3>
+					<h5>
+						{props.artist} | {props.album}
+					</h5>
 				</div>
 			</div>
 		</>
