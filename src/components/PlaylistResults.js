@@ -3,8 +3,6 @@ import "./components_styles/ResultsContainer.css";
 import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 
-import Tracklist from "./Tracklist";
-
 export default function PlaylistResults() {
 	return (
 		<>
@@ -19,8 +17,7 @@ export default function PlaylistResults() {
 						<SaveToSpotifyButton />
 					</div>
 					<div className="tracks-container">
-						{/* <Playlist /> */}
-						<Tracklist />
+						<Playlist />
 					</div>
 				</div>
 			</div>
