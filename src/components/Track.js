@@ -1,5 +1,7 @@
 import React from "react";
 import "./components_styles/Track.css";
+import AddToPlaylistButton from "./buttons/AddToPlaylistButton";
+import RemoveFromPlaylistButton from "./buttons/RemoveFromPlaylistButton";
 
 export default function Track(props) {
 	return (
@@ -14,6 +16,11 @@ export default function Track(props) {
 						{props.artist} | {props.album}
 					</h5>
 				</div>
+				{props.list === "results" ? (
+					<AddToPlaylistButton />
+				) : (
+					<RemoveFromPlaylistButton />
+				)}
 			</div>
 		</>
 	);

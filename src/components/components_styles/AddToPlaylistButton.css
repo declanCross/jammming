@@ -1,0 +1,6 @@
+.addToPlaylistButton {
+	border-radius: 50%;
+	max-height: 23%;
+	position: relative;
+	align-self: center;
+}

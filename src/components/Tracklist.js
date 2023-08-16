@@ -8,12 +8,15 @@ export default function Tracklist() {
 		<>
 			<div>
 				{albumArray.map((track) => (
-					<Track
+					<div className="results-track">
+						<Track
 						name={track.name}
 						artist={track.artist}
 						album={track.album}
 						albumArt={albumArt}
-					/>
+						list="results"
+						/>
+					</div>
 				))}
 			</div>
 		</>
