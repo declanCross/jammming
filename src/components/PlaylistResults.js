@@ -3,16 +3,25 @@ import "./components_styles/ResultsContainer.css";
 import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 
+import Tracklist from "./Tracklist";
+
 export default function PlaylistResults() {
 	return (
 		<>
 			<div className="background-container">
 				<div className="results-container">
 					<div className="results-header">
-						<input className="playlist-name" type="text" placeholder="Name your playlist"></input>
+						<input
+							className="playlist-name"
+							type="text"
+							placeholder="Name your playlist"
+						></input>
 						<SaveToSpotifyButton />
 					</div>
-					<Playlist />
+					<div className="tracks-container">
+						{/* <Playlist /> */}
+						<Tracklist />
+					</div>
 				</div>
 			</div>
 		</>

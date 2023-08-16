@@ -4,6 +4,7 @@
 	min-width: 350px;
 	max-width: 600px;
 	min-height: 400px;
+	max-height: 570px;
 	margin: 2%;
 }
 
@@ -16,7 +17,7 @@
 	display: flex;
 	border-bottom: 1px solid black;
 	padding: 0px 5px 0px 5px;
-	height: 40px;
+	max-height: 40px;
 	justify-content: space-between;
 }
 
@@ -33,4 +34,9 @@
 	border: none;
 	background-color: #ff0;
 	font-size: 24px;
+}
+
+.tracks-container {
+	overflow: auto;
+	max-height: 530px;
 }

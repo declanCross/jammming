@@ -10,7 +10,9 @@ export default function SearchResults() {
 					<div className="results-header">
 						<h2>Results</h2>
 					</div>
-					<Tracklist />
+					<div className="tracks-container">
+						<Tracklist />
+					</div>
 				</div>
 			</div>
 		</>
