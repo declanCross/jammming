@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import "../components_styles/RemoveFromPlaylistButton.css";
 
 function RemoveFromPlaylistButton() {
-  return (
-    <div>RemoveFromPlaylistButton</div>
-  )
+	return (
+		<input type="button" className="removeFromPlaylistButton" value="-"></input>
+	);
 }
 
 export default RemoveFromPlaylistButton;
