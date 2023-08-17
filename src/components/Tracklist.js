@@ -10,6 +10,7 @@ export default function Tracklist(props) {
 				{albumArray.map((track) => (
 					<div className="results-track">
 						<Track
+							keyName={track.name + track.artist}
 							name={track.name}
 							artist={track.artist}
 							album={track.album}

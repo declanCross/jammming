@@ -1,9 +1,14 @@
 import React from "react";
 import "../components_styles/RemoveFromPlaylistButton.css";
 
-function RemoveFromPlaylistButton() {
+function RemoveFromPlaylistButton(props) {
 	return (
-		<input type="button" className="removeFromPlaylistButton" value="-"></input>
+		<input
+			type="button"
+			className="removeFromPlaylistButton"
+			value="-"
+			onClick={props.removeTrackFromPlaylist}
+		></input>
 	);
 }
 

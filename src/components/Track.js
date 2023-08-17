@@ -20,15 +20,28 @@ export default function Track(props) {
 					<AddToPlaylistButton
 						addTrackToPlaylist={() =>
 							props.addTrackToPlaylist({
+								keyName: props.keyName,
 								name: props.name,
 								artist: props.artist,
 								album: props.album,
+								albumArt: props.albumArt,
 								list: "playlist",
 							})
 						}
 					/>
 				) : (
-					<RemoveFromPlaylistButton />
+					<RemoveFromPlaylistButton
+						removeTrackFromPlaylist={() =>
+							props.removeTrackFromPlaylist({
+								keyName: props.keyName,
+								name: props.name,
+								artist: props.artist,
+								album: props.album,
+								albumArt: props.albumArt,
+								list: "playlist",
+							})
+						}
+					/>
 				)}
 			</div>
 		</>

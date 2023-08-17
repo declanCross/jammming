@@ -9,11 +9,13 @@ export default function Playlist(props) {
 				{props.playlist.map((track) => (
 					<div className="results-track">
 						<Track
+							keyName={track.name + track.artist}
 							name={track.name}
 							artist={track.artist}
 							album={track.album}
 							albumArt={albumArt}
 							list="playlist"
+							removeTrackFromPlaylist={props.removeTrackFromPlaylist}
 						/>
 					</div>
 				))}

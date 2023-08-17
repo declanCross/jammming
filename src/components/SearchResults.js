@@ -11,6 +11,15 @@ export default function SearchResults() {
 	const addTrackToPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => [...prevPlaylist, track]);
 	};
+
+	const removeTrackFromPlaylist = (track) => {
+		setPlaylist((prevPlaylist) => [
+			...prevPlaylist.filter(
+				(playlistTrack) => playlistTrack.keyName !== track.keyName
+			),
+		]);
+	};
+
 	return (
 		<>
 			<div className="background-container">
@@ -34,7 +43,10 @@ export default function SearchResults() {
 						<SaveToSpotifyButton />
 					</div>
 					<div className="tracks-container">
-						<Playlist playlist={playlist} />
+						<Playlist
+							playlist={playlist}
+							removeTrackFromPlaylist={removeTrackFromPlaylist}
+						/>
 					</div>
 				</div>
 			</div>
