@@ -9,7 +9,14 @@ export default function SearchResults() {
 	const [playlist, setPlaylist] = useState([]);
 
 	const addTrackToPlaylist = (track) => {
-		setPlaylist((prevPlaylist) => [...prevPlaylist, track]);
+		setPlaylist((prevPlaylist) => {
+			const trackKeyNames = prevPlaylist.map((t) => t.keyName);
+			if (trackKeyNames.includes(track.keyName)) {
+				return prevPlaylist;
+			} else {
+				return [...prevPlaylist, track];
+			}
+		});
 	};
 
 	const removeTrackFromPlaylist = (track) => {
