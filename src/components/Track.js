@@ -17,7 +17,16 @@ export default function Track(props) {
 					</h5>
 				</div>
 				{props.list === "results" ? (
-					<AddToPlaylistButton />
+					<AddToPlaylistButton
+						addTrackToPlaylist={() =>
+							props.addTrackToPlaylist({
+								name: props.name,
+								artist: props.artist,
+								album: props.album,
+								list: "playlist",
+							})
+						}
+					/>
 				) : (
 					<RemoveFromPlaylistButton />
 				)}

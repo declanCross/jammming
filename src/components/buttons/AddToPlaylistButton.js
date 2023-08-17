@@ -1,9 +1,14 @@
 import React from "react";
 import "../components_styles/AddToPlaylistButton.css";
 
-function AddToPlaylistButton() {
+function AddToPlaylistButton(props) {
 	return (
-		<input type="button" className="addToPlaylistButton" value="+"></input>
+		<input
+			type="button"
+			className="addToPlaylistButton"
+			value="+"
+			onClick={props.addTrackToPlaylist}
+		></input>
 	);
 }
 
