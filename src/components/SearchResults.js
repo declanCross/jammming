@@ -5,8 +5,10 @@ import "./components_styles/ResultsContainer.css";
 import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 
-export default function SearchResults() {
+export default function SearchResults(props) {
 	const [playlist, setPlaylist] = useState([]);
+
+	const searchInput = props.searchInput;
 
 	const addTrackToPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => {

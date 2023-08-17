@@ -1,9 +1,12 @@
 import "./App.css";
+import React, { useState } from "react";
 import ChangeHeader from "./components/ChangeHeader";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 
 function App() {
+	const [searchInput, setSearchInput] = useState("");
+
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -13,9 +16,9 @@ function App() {
 				<ChangeHeader />
 			</div>
 			<main className="App-main">
-				<SearchBar />
+				<SearchBar setSearchInput={setSearchInput} />
 				<div className="App-main-results">
-					<SearchResults />
+					<SearchResults searchInput={searchInput} />
 				</div>
 			</main>
 			<footer className="App-footer"></footer>

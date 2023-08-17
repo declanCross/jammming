@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ChangeHeader() {
+function ChangeHeader() {
 	const jammminLyrics = [
 		"We're jammmin",
 		"I hope you like jammmin too",
@@ -18,3 +18,5 @@ export default function ChangeHeader() {
 		</>
 	);
 }
+
+export default React.memo(ChangeHeader);
