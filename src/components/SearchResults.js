@@ -37,7 +37,10 @@ export default function SearchResults(props) {
 						<h2>Results</h2>
 					</div>
 					<div className="tracks-container">
-						<Tracklist addTrackToPlaylist={addTrackToPlaylist} />
+						<Tracklist
+							searchInput={searchInput}
+							addTrackToPlaylist={addTrackToPlaylist}
+						/>
 					</div>
 				</div>
 			</div>
