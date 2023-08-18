@@ -3,6 +3,8 @@ import Track from "./Track";
 import albumArt from "./components_styles/images/what_if_its_me.jpg";
 
 export default function Playlist(props) {
+	const playlistName = props.playlistName;
+
 	return (
 		<>
 			<div>

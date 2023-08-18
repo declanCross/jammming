@@ -7,6 +7,7 @@ import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 
 export default function SearchResults(props) {
 	const [playlist, setPlaylist] = useState([]);
+	const [playlistName, setPlaylistName] = useState('');
 
 	const searchInput = props.searchInput;
 
@@ -51,11 +52,16 @@ export default function SearchResults(props) {
 							className="playlist-name"
 							type="text"
 							placeholder="Name your playlist"
+							setPlaylistName={setPlaylistName}
+							onChange={(event) => {
+								setPlaylistName(event.target.value);
+							}}
 						></input>
 						<SaveToSpotifyButton />
 					</div>
 					<div className="tracks-container">
 						<Playlist
+							playlistName={playlistName}
 							playlist={playlist}
 							removeTrackFromPlaylist={removeTrackFromPlaylist}
 						/>
