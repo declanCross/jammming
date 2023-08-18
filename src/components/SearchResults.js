@@ -45,10 +45,19 @@ export default function SearchResults(props) {
 	};
 
 	const saveToSpotify = (playlistInfo) => {
-		setSavedPlaylists((prevSavedPlaylists) => [
-			...prevSavedPlaylists,
-			playlistInfo,
-		]);
+		setSavedPlaylists((prevSavedPlaylists) => {
+			const savedPlaylistsNames = prevSavedPlaylists.map(
+				(sp) => sp.playlistName
+			);
+			if (savedPlaylistsNames.includes(playlistInfo.playlistName)) {
+				alert("This playlist name already exists. Choose another name.");
+				return prevSavedPlaylists;
+			} else {
+				setPlaylist([]);
+				setPlaylistName("");
+				return [...prevSavedPlaylists, playlistInfo];
+			}
+		});
 	};
 
 	return (
