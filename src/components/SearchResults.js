@@ -60,6 +60,11 @@ export default function SearchResults(props) {
 		});
 	};
 
+	const showSavedPlaylist = (playlistInfo) => {
+		setPlaylist(playlistInfo.playlist);
+		setPlaylistName(playlistInfo.playlistName);
+	}
+
 	return (
 		<>
 			<div className="background-container">
