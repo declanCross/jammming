@@ -4,10 +4,12 @@ import ApiResults from "./ApiResults";
 import Tracklist from "./Tracklist";
 import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
+import SavedPlaylists from "./SavedPlaylists";
 
 export default function SearchResults(props) {
 	const [playlist, setPlaylist] = useState([]);
 	const [playlistName, setPlaylistName] = useState("");
+	const [savedPlaylists, setSavedPlaylists] = useState([]);
 
 	const searchInput = props.searchInput.toLowerCase();
 
@@ -42,6 +44,13 @@ export default function SearchResults(props) {
 		]);
 	};
 
+	const saveToSpotify = (playlistInfo) => {
+		setSavedPlaylists((prevSavedPlaylists) => [
+			...prevSavedPlaylists,
+			playlistInfo,
+		]);
+	};
+
 	return (
 		<>
 			<div className="background-container">
@@ -69,7 +78,14 @@ export default function SearchResults(props) {
 								setPlaylistName(event.target.value);
 							}}
 						></input>
-						<SaveToSpotifyButton />
+						<SaveToSpotifyButton
+							saveToSpotify={() =>
+								saveToSpotify({
+									playlist: playlist,
+									playlistName: playlistName,
+								})
+							}
+						/>
 					</div>
 					<div className="tracks-container">
 						<Playlist
@@ -77,6 +93,16 @@ export default function SearchResults(props) {
 							playlist={playlist}
 							removeTrackFromPlaylist={removeTrackFromPlaylist}
 						/>
+					</div>
+				</div>
+			</div>
+			<div className="background-container">
+				<div className="results-container">
+					<div className="results-header">
+						<h2>Saved Playlists</h2>
+					</div>
+					<div className="tracks-container">
+						<SavedPlaylists savedPlaylists={savedPlaylists} />
 					</div>
 				</div>
 			</div>
