@@ -7,7 +7,7 @@ import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 
 export default function SearchResults(props) {
 	const [playlist, setPlaylist] = useState([]);
-	const [playlistName, setPlaylistName] = useState('');
+	const [playlistName, setPlaylistName] = useState("");
 
 	const searchInput = props.searchInput;
 
