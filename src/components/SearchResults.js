@@ -63,7 +63,7 @@ export default function SearchResults(props) {
 	const showSavedPlaylist = (playlistInfo) => {
 		setPlaylist(playlistInfo.playlist);
 		setPlaylistName(playlistInfo.playlistName);
-	}
+	};
 
 	return (
 		<>
@@ -117,7 +117,10 @@ export default function SearchResults(props) {
 						<h2>Saved Playlists</h2>
 					</div>
 					<div className="tracks-container">
-						<SavedPlaylists savedPlaylists={savedPlaylists} />
+						<SavedPlaylists
+							savedPlaylists={savedPlaylists}
+							showSavedPlaylist={showSavedPlaylist}
+						/>
 					</div>
 				</div>
 			</div>
