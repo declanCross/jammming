@@ -4,11 +4,12 @@ import albumArt from "./components_styles/images/what_if_its_me.jpg";
 
 export default function Playlist(props) {
 	const playlistName = props.playlistName;
+	const playlist = props.playlist;
 
 	return (
 		<>
 			<div>
-				{props.playlist.map((track) => (
+				{playlist.map((track) => (
 					<div className="results-track">
 						<Track
 							keyName={track.name + track.artist}
