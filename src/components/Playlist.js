@@ -12,7 +12,7 @@ export default function Playlist(props) {
 				{playlist.map((track) => (
 					<div className="results-track">
 						<Track
-							keyName={track.name + track.artist}
+							uri={track.uri}
 							name={track.name}
 							artist={track.artist}
 							album={track.album}

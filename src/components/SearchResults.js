@@ -25,8 +25,8 @@ export default function SearchResults(props) {
 
 	const addTrackToPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => {
-			const trackKeyNames = prevPlaylist.map((t) => t.keyName);
-			if (trackKeyNames.includes(track.keyName)) {
+			const trackUris = prevPlaylist.map((t) => t.uri);
+			if (trackUris.includes(track.uri)) {
 				return prevPlaylist;
 			} else {
 				return [...prevPlaylist, track];
@@ -37,7 +37,7 @@ export default function SearchResults(props) {
 	const removeTrackFromPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => [
 			...prevPlaylist.filter(
-				(playlistTrack) => playlistTrack.keyName !== track.keyName
+				(playlistTrack) => playlistTrack.uri !== track.uri
 			),
 		]);
 	};

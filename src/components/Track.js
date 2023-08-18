@@ -20,7 +20,7 @@ export default function Track(props) {
 					<AddToPlaylistButton
 						addTrackToPlaylist={() =>
 							props.addTrackToPlaylist({
-								keyName: props.keyName,
+								uri: props.uri,
 								name: props.name,
 								artist: props.artist,
 								album: props.album,
@@ -33,7 +33,7 @@ export default function Track(props) {
 					<RemoveFromPlaylistButton
 						removeTrackFromPlaylist={() =>
 							props.removeTrackFromPlaylist({
-								keyName: props.keyName,
+								uri: props.uri,
 								name: props.name,
 								artist: props.artist,
 								album: props.album,

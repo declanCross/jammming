@@ -10,7 +10,7 @@ export default function Tracklist(props) {
 				{searchTracks.map((track) => (
 					<div className="results-track">
 						<Track
-							keyName={track.name + track.artist}
+							uri={track.uri}
 							name={track.name}
 							artist={track.artist}
 							album={track.album}
