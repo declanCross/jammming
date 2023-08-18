@@ -82,6 +82,7 @@ export default function SearchResults(props) {
 							className="playlist-name"
 							type="text"
 							placeholder="Name your playlist"
+							value={playlistName}
 							setPlaylistName={setPlaylistName}
 							onChange={(event) => {
 								setPlaylistName(event.target.value);
