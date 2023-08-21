@@ -45,7 +45,7 @@ const SpotifyAuthorize = ({ token, setToken }) => {
 			setToken(_token);
 			// use the access token to make requests to the Spotify Web API
 		}
-	}, []);
+	}, [setToken]);
 
 	return (
 		<div>
