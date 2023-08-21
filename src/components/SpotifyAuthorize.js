@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
-const SpotifyAuthorize = () => {
-	const [token, setToken] = useState(null);
+const SpotifyAuthorize = ({ token, setToken }) => {
 	const stateKey = "spotify_auth_state";
 
 	const generateRandomString = (length) => {

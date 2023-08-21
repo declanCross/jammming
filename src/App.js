@@ -7,6 +7,7 @@ import SearchResults from "./components/SearchResults";
 
 function App() {
 	const [searchInput, setSearchInput] = useState("");
+	const [token, setToken] = useState(null);
 
 	return (
 		<div className="App">
@@ -18,7 +19,7 @@ function App() {
 			</div>
 			<main className="App-main">
 				<SearchBar setSearchInput={setSearchInput} />
-				<SpotifyAuthorize />
+				<SpotifyAuthorize token={token} setToken={setToken} />
 				<div className="App-main-results">
 					<SearchResults searchInput={searchInput} />
 				</div>
