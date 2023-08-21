@@ -15,8 +15,8 @@ const SpotifyAuthorize = () => {
 	};
 
 	const handleAuth = () => {
-		const client_id = "CLIENT_ID";
-		const redirect_uri = "http://localhost:8888/callback";
+		const client_id = "5d7811d8349c47e4a018459905b57f82";
+		const redirect_uri = "http://localhost:3000/";
 		const state = generateRandomString(16);
 		localStorage.setItem(stateKey, state);
 		const scope = "user-read-private user-read-email";

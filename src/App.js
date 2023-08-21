@@ -17,6 +17,7 @@ function App() {
 			</div>
 			<main className="App-main">
 				<SearchBar setSearchInput={setSearchInput} />
+				
 				<div className="App-main-results">
 					<SearchResults searchInput={searchInput} />
 				</div>
