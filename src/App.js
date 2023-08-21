@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import ChangeHeader from "./components/ChangeHeader";
 import SearchBar from "./components/SearchBar";
+import SpotifyAuthorize from "./components/SpotifyAuthorize";
 import SearchResults from "./components/SearchResults";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 			</div>
 			<main className="App-main">
 				<SearchBar setSearchInput={setSearchInput} />
-				
+				<SpotifyAuthorize />
 				<div className="App-main-results">
 					<SearchResults searchInput={searchInput} />
 				</div>

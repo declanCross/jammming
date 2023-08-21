@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const SpotifyAuthorize = () => {
 	const [token, setToken] = useState(null);
@@ -29,7 +29,7 @@ const SpotifyAuthorize = () => {
 		window.location = url;
 	};
 
-	const handleToken = () => {
+	useEffect(() => {
 		const hash = window.location.hash
 			.substring(1)
 			.split("&")
@@ -46,12 +46,11 @@ const SpotifyAuthorize = () => {
 			setToken(_token);
 			// use the access token to make requests to the Spotify Web API
 		}
-	};
+	}, []);
 
 	return (
 		<div>
 			<button onClick={handleAuth}>Authorize with Spotify</button>
-			<button onClick={handleToken}>Get access token</button>
 			{token && <p>Access token: {token}</p>}
 		</div>
 	);
@@ -59,6 +58,9 @@ const SpotifyAuthorize = () => {
 
 export default SpotifyAuthorize;
 
-// In this example, we have a `SpotifyAuthorize` component that renders two buttons: one for authorizing with Spotify and one for getting the access token. When the user clicks the "Authorize with Spotify" button, the `handleAuth` function is called, which constructs the authorization URL using the code you provided and then uses `window.location` to redirect the user to that URL. Once the user has authorized your application and been redirected back to your `redirect_uri`, they can click the "Get access token" button to call the `handleToken` function. This function extracts the access token from the URL fragment using JavaScript and stores it in the component's state using the `setToken` function. You can then use this access token to make requests to the Spotify Web API on behalf of the user.
+// In this example, we have a `SpotifyAuthorize` component that renders a button for authorizing with Spotify. When the user clicks the "Authorize with Spotify" button, the `handleAuth` function is called, which constructs the authorization URL using the code you provided and then uses `window.location` to redirect the user to that URL. Once the user has authorized your application and been redirected back to your `redirect_uri`, the `useEffect` hook is called, which extracts the access token from the URL fragment using JavaScript and stores it in the component's state using the `setToken` function. You can then use this access token to make requests to the Spotify Web API on behalf of the user.
 
 // I hope this example helps you understand how to use the code you provided in your React application! Let me know if you have any other questions. 😊
+
+//words that make AI friend respond with a working answer
+// I tried the Spotify Developer Documentation. All they provide is the example code I provided earlier. Please help, I just want to know how to USE it in my application.
