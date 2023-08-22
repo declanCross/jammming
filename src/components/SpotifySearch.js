@@ -3,6 +3,7 @@
 // Here is an example of how you could implement a search bar in a React component that returns track results from the Spotify API:
 
 import React, { useState } from "react";
+import "./components_styles/SpotifySearch.css";
 
 const SpotifySearch = ({ token, results, setResults }) => {
 	const [query, setQuery] = useState("");
@@ -26,11 +27,15 @@ const SpotifySearch = ({ token, results, setResults }) => {
 		<div>
 			<form onSubmit={handleSearch}>
 				<input
+					className="search"
 					type="text"
 					value={query}
 					onChange={(event) => setQuery(event.target.value)}
+					placeholder="Search for songs/artists/albums here"
 				/>
-				<button type="submit">Search</button>
+				<button className="search-button" type="submit">
+					Search
+				</button>
 			</form>
 			{/* <ul>
 				{results.map((track) => (

@@ -1,12 +1,19 @@
-.SearchBar {
+form {
 	display: flex;
 	justify-content: center;
 	padding-top: 2%;
 }
 
-input.Search {
+input.search {
 	border-radius: 50px;
 	min-height: 24px;
 	min-width: 250px;
 	text-align: center;
+}
+
+button {
+	min-height: 24px;
+	min-width: 60px;
+	margin-left: 5px;
+	border-radius: 3px;
 }
