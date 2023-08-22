@@ -18,7 +18,8 @@ img {
 	width: 70%;
 	height: 100%;
 	margin: 1%;
-	padding-top: 5%;
+	padding-top: 7%;
+	overflow: auto;
 }
 
 .info-container > h3,
@@ -27,5 +28,5 @@ h5 {
 	height: auto;
 	margin: auto;
 	display: flex;
-	/* padding-bottom: 5px; */
+	padding-bottom: 5px;
 }
