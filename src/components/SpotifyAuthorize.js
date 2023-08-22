@@ -18,7 +18,8 @@ const SpotifyAuthorize = ({ token, setToken }) => {
 		const redirect_uri = "http://localhost:3000/";
 		const state = generateRandomString(16);
 		localStorage.setItem(stateKey, state);
-		const scope = "user-read-private user-read-email";
+		const scope =
+			"user-read-private user-read-email playlist-modify-public playlist-modify-private";
 		let url = "https://accounts.spotify.com/authorize";
 		url += "?response_type=token";
 		url += "&client_id=" + encodeURIComponent(client_id);

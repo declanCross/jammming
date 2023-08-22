@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./components_styles/ResultsContainer.css";
 import Tracklist from "./Tracklist";
 import Playlist from "./Playlist";
-import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 import SavedPlaylists from "./SavedPlaylists";
 
 export default function SearchResults({ results, token }) {
@@ -31,21 +30,72 @@ export default function SearchResults({ results, token }) {
 		]);
 	};
 
-	const saveToSpotify = (playlistInfo) => {
-		setSavedPlaylists((prevSavedPlaylists) => {
-			const savedPlaylistsNames = prevSavedPlaylists.map(
-				(sp) => sp.playlistName
-			);
-			if (savedPlaylistsNames.includes(playlistInfo.playlistName)) {
-				alert("This playlist name already exists. Choose another name.");
-				return prevSavedPlaylists;
-			} else {
-				setPlaylist([]);
-				setPlaylistName("");
-				return [...prevSavedPlaylists, playlistInfo];
-			}
-		});
-	};
+	async function saveToSpotify(playlist, playlistName) {
+		const trackUris = Object.keys(playlist).map((key) => playlist[key].uri);
+		console.log(trackUris);
+		console.log(playlist);
+		// Obtain user ID
+		fetch("https://api.spotify.com/v1/me", {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => response.json())
+			.then(async (data) => {
+				const userId = data.id;
+
+				// Create a new playlist
+				const response = await fetch(
+					`https://api.spotify.com/v1/users/${userId}/playlists`,
+					{
+						method: "POST",
+						headers: {
+							Authorization: `Bearer ${token}`,
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							name: playlistName,
+							public: false,
+						}),
+					}
+				);
+				const playlistData = await response.json();
+				const playlistId = playlistData.id;
+
+				// Add tracks to the new playlist
+				await fetch(
+					`https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+					{
+						method: "POST",
+						headers: {
+							Authorization: `Bearer ${token}`,
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							uris: trackUris,
+						}),
+					}
+				);
+
+				console.log(`Playlist saved: ${playlistName}`);
+			});
+	}
+
+	// const saveToSpotify = (playlistInfo) => {
+	// 	setSavedPlaylists((prevSavedPlaylists) => {
+	// 		const savedPlaylistsNames = prevSavedPlaylists.map(
+	// 			(sp) => sp.playlistName
+	// 		);
+	// 		if (savedPlaylistsNames.includes(playlistInfo.playlistName)) {
+	// 			alert("This playlist name already exists. Choose another name.");
+	// 			return prevSavedPlaylists;
+	// 		} else {
+	// 			setPlaylist([]);
+	// 			setPlaylistName("");
+	// 			return [...prevSavedPlaylists, playlistInfo];
+	// 		}
+	// 	});
+	// };
 
 	const showSavedPlaylist = (playlistInfo) => {
 		setPlaylist(playlistInfo.playlist);
@@ -80,14 +130,12 @@ export default function SearchResults({ results, token }) {
 								setPlaylistName(event.target.value);
 							}}
 						></input>
-						<SaveToSpotifyButton
-							saveToSpotify={() =>
-								saveToSpotify({
-									playlist: playlist,
-									playlistName: playlistName,
-								})
-							}
-						/>
+						<input
+							className="SaveToSpotifyButton"
+							type="button"
+							value="Save to Spotify"
+							onClick={() => saveToSpotify(playlist, playlistName)}
+						></input>
 					</div>
 					<div className="tracks-container">
 						<Playlist
