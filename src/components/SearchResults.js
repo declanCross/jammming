@@ -128,12 +128,12 @@ export default function SearchResults({ results, token }) {
 								setPlaylistName(event.target.value);
 							}}
 						></input>
-						<input
+						<button
 							className="SaveToSpotifyButton"
-							type="button"
-							value="Save to Spotify"
 							onClick={() => saveToSpotify(playlist, playlistName)}
-						></input>
+						>
+							Save to Spotify
+						</button>
 					</div>
 					<div className="tracks-container">
 						<Playlist

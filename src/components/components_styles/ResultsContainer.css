@@ -40,3 +40,10 @@
 	overflow: auto;
 	max-height: 530px;
 }
+
+button {
+	min-height: 24px;
+	min-width: 60px;
+	margin-left: 5px;
+	border-radius: 3px;
+}
