@@ -19,13 +19,15 @@ function App() {
 			</div>
 			<main className="App-main">
 				<SpotifyAuthorize token={token} setToken={setToken} />
-				<SpotifySearch
-					token={token}
-					results={results}
-					setResults={setResults}
-				/>
+				{token && (
+					<SpotifySearch
+						token={token}
+						results={results}
+						setResults={setResults}
+					/>
+				)}
 				<div className="App-main-results">
-					<SearchResults results={results} token={token} />
+					{token && <SearchResults results={results} token={token} />}
 				</div>
 			</main>
 			<footer className="App-footer"></footer>

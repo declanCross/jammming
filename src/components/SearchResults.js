@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./components_styles/ResultsContainer.css";
 import Tracklist from "./Tracklist";
 import Playlist from "./Playlist";
-import SavedPlaylists from "./SavedPlaylists";
 
 export default function SearchResults({ results, token }) {
 	const [playlist, setPlaylist] = useState([]);
@@ -76,26 +75,28 @@ export default function SearchResults({ results, token }) {
 						}),
 					}
 				);
-
-				console.log(`Playlist saved: ${playlistName}`);
+				console.log(
+					`Playlist saved: ${playlistName} consisting of ${playlist}`
+				);
+				const playlistInfo = {
+					playlist: playlist,
+					playlistName: playlistName,
+				};
+				setSavedPlaylists((prevSavedPlaylists) => {
+					const savedPlaylistsNames = prevSavedPlaylists.map(
+						(sp) => sp.playlistName
+					);
+					if (savedPlaylistsNames.includes(playlistInfo.playlistName)) {
+						alert("This playlist name already exists. Choose another name.");
+						return prevSavedPlaylists;
+					} else {
+						setPlaylist([]);
+						setPlaylistName("");
+						return [...prevSavedPlaylists, playlistInfo];
+					}
+				});
 			});
 	}
-
-	// const saveToSpotify = (playlistInfo) => {
-	// 	setSavedPlaylists((prevSavedPlaylists) => {
-	// 		const savedPlaylistsNames = prevSavedPlaylists.map(
-	// 			(sp) => sp.playlistName
-	// 		);
-	// 		if (savedPlaylistsNames.includes(playlistInfo.playlistName)) {
-	// 			alert("This playlist name already exists. Choose another name.");
-	// 			return prevSavedPlaylists;
-	// 		} else {
-	// 			setPlaylist([]);
-	// 			setPlaylistName("");
-	// 			return [...prevSavedPlaylists, playlistInfo];
-	// 		}
-	// 	});
-	// };
 
 	const showSavedPlaylist = (playlistInfo) => {
 		setPlaylist(playlistInfo.playlist);
@@ -152,10 +153,11 @@ export default function SearchResults({ results, token }) {
 						<h2>Saved Playlists</h2>
 					</div>
 					<div className="tracks-container">
-						<SavedPlaylists
-							savedPlaylists={savedPlaylists}
-							showSavedPlaylist={showSavedPlaylist}
-						/>
+						{savedPlaylists.map((playlistInfo) => (
+							<button onClick={() => showSavedPlaylist(playlistInfo)}>
+								<h3>{playlistInfo.playlistName}</h3>
+							</button>
+						))}
 					</div>
 				</div>
 			</div>
