@@ -2,43 +2,51 @@
 
 // Here is an example of how you could implement a search bar in a React component that returns track results from the Spotify API:
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SpotifySearch = ({ token, results, setResults }) => {
-  const [query, setQuery] = useState('');
-  // const [results, setResults] = useState([]);
+	const [query, setQuery] = useState("");
+	// const [results, setResults] = useState([]);
 
-  const handleSearch = async (event) => {
-    event.preventDefault();
-    const response = await fetch(
-      `https://api.spotify.com/v1/search?q=${query}&type=track`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    const data = await response.json();
-    setResults(data.tracks.items);
-  };
+	const handleSearch = async (event) => {
+		event.preventDefault();
+		const response = await fetch(
+			`https://api.spotify.com/v1/search?q=${query}&type=track`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		const data = await response.json();
+		setResults(data.tracks.items);
+	};
 
-  return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <ul>
-        {results.map((track) => (
-          <li key={track.id}>{track.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+	return (
+		<div>
+			<form onSubmit={handleSearch}>
+				<input
+					type="text"
+					value={query}
+					onChange={(event) => setQuery(event.target.value)}
+				/>
+				<button type="submit">Search</button>
+			</form>
+			<ul>
+				{results.map((track) => (
+					<>
+						<li key={track.id} uri={track.uri}>
+							{track.name}
+							{track.artists[0].name}
+							{track.album.name}
+							<img src={track.album.images[1].url} alt=""></img>
+						</li>
+						{console.log(track)}
+					</>
+				))}
+			</ul>
+		</div>
+	);
 };
 
 export default SpotifySearch;
