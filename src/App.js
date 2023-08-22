@@ -17,7 +17,7 @@ function App() {
 				<ChangeHeader />
 			</div>
 			<main className="App-main">
-				<SpotifyAuthorize token={token} setToken={setToken} />
+				{!token && <SpotifyAuthorize token={token} setToken={setToken} />}
 				{token && (
 					<SpotifySearch
 						token={token}
