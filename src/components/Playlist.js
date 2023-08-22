@@ -1,11 +1,7 @@
 import React from "react";
 import Track from "./Track";
 
-export default function Playlist({
-	playlist,
-	playlistName,
-	removeTrackFromPlaylist,
-}) {
+export default function Playlist({ playlist, removeTrackFromPlaylist }) {
 	return (
 		<>
 			<div>

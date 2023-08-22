@@ -126,7 +126,6 @@ export default function SearchResults({ results, token }) {
 							type="text"
 							placeholder="Name your playlist"
 							value={playlistName}
-							setPlaylistName={setPlaylistName}
 							onChange={(event) => {
 								setPlaylistName(event.target.value);
 							}}
@@ -140,7 +139,6 @@ export default function SearchResults({ results, token }) {
 					</div>
 					<div className="tracks-container">
 						<Playlist
-							playlistName={playlistName}
 							playlist={playlist}
 							removeTrackFromPlaylist={removeTrackFromPlaylist}
 						/>
