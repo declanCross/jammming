@@ -8,7 +8,6 @@ import SpotifySearch from "./components/SpotifySearch";
 function App() {
 	const [token, setToken] = useState(null);
 	const [results, setResults] = useState([]);
-
 	return (
 		<div className="App">
 			<header className="App-header">

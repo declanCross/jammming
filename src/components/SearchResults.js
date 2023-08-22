@@ -7,7 +7,7 @@ export default function SearchResults({ results, token }) {
 	const [playlist, setPlaylist] = useState([]);
 	const [playlistName, setPlaylistName] = useState("");
 	const [savedPlaylists, setSavedPlaylists] = useState([]);
-
+	//
 	const addTrackToPlaylist = async (track) => {
 		const response = await fetch(
 			`https://api.spotify.com/v1/tracks/${track.id}`,
@@ -20,7 +20,7 @@ export default function SearchResults({ results, token }) {
 		const data = await response.json();
 		setPlaylist((prevPlaylist) => [...prevPlaylist, data]);
 	};
-
+	//
 	const removeTrackFromPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => [
 			...prevPlaylist.filter(
@@ -28,7 +28,7 @@ export default function SearchResults({ results, token }) {
 			),
 		]);
 	};
-
+	//
 	async function saveToSpotify(playlist, playlistName) {
 		const trackUris = Object.keys(playlist).map((key) => playlist[key].uri);
 		console.log(trackUris);
@@ -42,7 +42,6 @@ export default function SearchResults({ results, token }) {
 			.then((response) => response.json())
 			.then(async (data) => {
 				const userId = data.id;
-
 				// Create a new playlist
 				const response = await fetch(
 					`https://api.spotify.com/v1/users/${userId}/playlists`,
@@ -60,7 +59,6 @@ export default function SearchResults({ results, token }) {
 				);
 				const playlistData = await response.json();
 				const playlistId = playlistData.id;
-
 				// Add tracks to the new playlist
 				await fetch(
 					`https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
@@ -97,12 +95,12 @@ export default function SearchResults({ results, token }) {
 				});
 			});
 	}
-
+	//
 	const showSavedPlaylist = (playlistInfo) => {
 		setPlaylist(playlistInfo.playlist);
 		setPlaylistName(playlistInfo.playlistName);
 	};
-
+	//
 	return (
 		<>
 			<div className="background-container">
