@@ -5,20 +5,22 @@ import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 import SavedPlaylists from "./SavedPlaylists";
 
-export default function SearchResults({results}) {
+export default function SearchResults({ results, token }) {
 	const [playlist, setPlaylist] = useState([]);
 	const [playlistName, setPlaylistName] = useState("");
 	const [savedPlaylists, setSavedPlaylists] = useState([]);
 
-	const addTrackToPlaylist = (track) => {
-		setPlaylist((prevPlaylist) => {
-			const trackUris = prevPlaylist.map((t) => t.uri);
-			if (trackUris.includes(track.uri)) {
-				return prevPlaylist;
-			} else {
-				return [...prevPlaylist, track];
+	const addTrackToPlaylist = async (track) => {
+		const response = await fetch(
+			`https://api.spotify.com/v1/tracks/${track.id}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
 			}
-		});
+		);
+		const data = await response.json();
+		setPlaylist((prevPlaylist) => [...prevPlaylist, data]);
 	};
 
 	const removeTrackFromPlaylist = (track) => {

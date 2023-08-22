@@ -25,7 +25,7 @@ function App() {
 					setResults={setResults}
 				/>
 				<div className="App-main-results">
-					<SearchResults results={results} />
+					<SearchResults results={results} token={token} />
 				</div>
 			</main>
 			<footer className="App-footer"></footer>

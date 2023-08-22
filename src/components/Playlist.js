@@ -13,6 +13,7 @@ export default function Playlist({
 					<div className="results-track">
 						<Track
 							key={track.id}
+							id={track.id}
 							uri={track.uri}
 							name={track.name}
 							artist={track.artists[0].name}
