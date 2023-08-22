@@ -37,19 +37,6 @@ const SpotifySearch = ({ token, results, setResults }) => {
 					Search
 				</button>
 			</form>
-			{/* <ul>
-				{results.map((track) => (
-					<>
-						<li key={track.id} uri={track.uri}>
-							{track.name}
-							{track.artists[0].name}
-							{track.album.name}
-							<img src={track.album.images[1].url} alt=""></img>
-						</li>
-						{console.log(track)}
-					</>
-				))}
-			</ul> */}
 		</div>
 	);
 };
