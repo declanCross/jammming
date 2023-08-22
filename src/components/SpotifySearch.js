@@ -32,7 +32,7 @@ const SpotifySearch = ({ token, results, setResults }) => {
 				/>
 				<button type="submit">Search</button>
 			</form>
-			<ul>
+			{/* <ul>
 				{results.map((track) => (
 					<>
 						<li key={track.id} uri={track.uri}>
@@ -44,7 +44,7 @@ const SpotifySearch = ({ token, results, setResults }) => {
 						{console.log(track)}
 					</>
 				))}
-			</ul>
+			</ul> */}
 		</div>
 	);
 };

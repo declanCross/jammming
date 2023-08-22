@@ -1,13 +1,11 @@
 import "./App.css";
 import React, { useState } from "react";
 import ChangeHeader from "./components/ChangeHeader";
-import SearchBar from "./components/SearchBar";
 import SpotifyAuthorize from "./components/SpotifyAuthorize";
 import SearchResults from "./components/SearchResults";
 import SpotifySearch from "./components/SpotifySearch";
 
 function App() {
-	const [searchInput, setSearchInput] = useState("");
 	const [token, setToken] = useState(null);
 	const [results, setResults] = useState([]);
 
@@ -20,7 +18,6 @@ function App() {
 				<ChangeHeader />
 			</div>
 			<main className="App-main">
-				<SearchBar setSearchInput={setSearchInput} />
 				<SpotifyAuthorize token={token} setToken={setToken} />
 				<SpotifySearch
 					token={token}
@@ -28,7 +25,7 @@ function App() {
 					setResults={setResults}
 				/>
 				<div className="App-main-results">
-					<SearchResults searchInput={searchInput} />
+					<SearchResults results={results} />
 				</div>
 			</main>
 			<footer className="App-footer"></footer>

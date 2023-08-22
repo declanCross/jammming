@@ -49,8 +49,8 @@ const SpotifyAuthorize = ({ token, setToken }) => {
 
 	return (
 		<div>
-			<button onClick={handleAuth}>Authorize with Spotify</button>
-			{token && <p>Access token: {token}</p>}
+			<button onClick={handleAuth}>Log in to Spotify</button>
+			{/* {token && <p>Access token: {token}</p>} */}
 		</div>
 	);
 };

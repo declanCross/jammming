@@ -1,29 +1,14 @@
 import React, { useState } from "react";
 import "./components_styles/ResultsContainer.css";
-import ApiResults from "./ApiResults";
 import Tracklist from "./Tracklist";
 import Playlist from "./Playlist";
 import SaveToSpotifyButton from "./buttons/SaveToSpotifyButton";
 import SavedPlaylists from "./SavedPlaylists";
 
-export default function SearchResults(props) {
+export default function SearchResults({results}) {
 	const [playlist, setPlaylist] = useState([]);
 	const [playlistName, setPlaylistName] = useState("");
 	const [savedPlaylists, setSavedPlaylists] = useState([]);
-
-	const searchInput = props.searchInput.toLowerCase();
-
-	const searchTracks = ApiResults.filter((track) => {
-		if (!searchInput) {
-			return undefined;
-		} else {
-			return (
-				track.name.toLowerCase().includes(searchInput) ||
-				track.artist.toLowerCase().includes(searchInput) ||
-				track.album.toLowerCase().includes(searchInput)
-			);
-		}
-	});
 
 	const addTrackToPlaylist = (track) => {
 		setPlaylist((prevPlaylist) => {
@@ -74,7 +59,7 @@ export default function SearchResults(props) {
 					</div>
 					<div className="tracks-container">
 						<Tracklist
-							searchTracks={searchTracks}
+							results={results}
 							addTrackToPlaylist={addTrackToPlaylist}
 						/>
 					</div>
