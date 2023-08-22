@@ -12,7 +12,7 @@ const SpotifySearch = ({ token, results, setResults }) => {
 	const handleSearch = async (event) => {
 		event.preventDefault();
 		const response = await fetch(
-			`https://api.spotify.com/v1/search?q=${query}&type=track`,
+			`https://api.spotify.com/v1/search?q=${query}&type=track,album,artist`,
 			{
 				headers: {
 					Authorization: `Bearer ${token}`,
