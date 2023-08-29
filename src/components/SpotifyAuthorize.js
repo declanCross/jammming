@@ -15,7 +15,8 @@ const SpotifyAuthorize = ({ token, setToken }) => {
 
 	const handleAuth = () => {
 		const client_id = "5d7811d8349c47e4a018459905b57f82";
-		const redirect_uri = "http://localhost:3000/";
+		const redirect_uri =
+			"https://jammmin-spotify-playlist-creator.netlify.app/";
 		const state = generateRandomString(16);
 		localStorage.setItem(stateKey, state);
 		const scope =
